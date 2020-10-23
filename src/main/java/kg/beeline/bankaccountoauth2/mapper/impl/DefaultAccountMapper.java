@@ -8,7 +8,7 @@ import kg.beeline.bankaccountoauth2.dto.account.request.AccountOperationRequestD
 import kg.beeline.bankaccountoauth2.dto.account.request.AddAccountRequestDto;
 import kg.beeline.bankaccountoauth2.exception.UnAuthorizedException;
 import kg.beeline.bankaccountoauth2.mapper.AccountMapper;
-import kg.beeline.bankaccountoauth2.service.UserContextProvider;
+import kg.beeline.bankaccountoauth2.service.user.UserContextProvider;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;

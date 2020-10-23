@@ -1,7 +1,7 @@
-package kg.beeline.bankaccountoauth2.service.impl;
+package kg.beeline.bankaccountoauth2.service.user.impl;
 
 import kg.beeline.bankaccountoauth2.exception.UnAuthorizedException;
-import kg.beeline.bankaccountoauth2.service.UserContextProvider;
+import kg.beeline.bankaccountoauth2.service.user.UserContextProvider;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

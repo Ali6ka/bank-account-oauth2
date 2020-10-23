@@ -8,6 +8,8 @@ import kg.beeline.bankaccountoauth2.service.account.AccountService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class DefaultAccountService implements AccountService {
 
@@ -29,6 +31,18 @@ public class DefaultAccountService implements AccountService {
     public Account getByUserUid(String userUid) throws NotFoundException {
         return repository.findByUserUid(userUid)
                 .orElseThrow(() -> new NotFoundException(Account.class, userUid, "userUid"));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Account> getAll() throws NotFoundException {
+        List<Account> accounts = repository.findAll();
+
+        if (accounts.isEmpty()) {
+            throw new NotFoundException("Аккаунтов нет");
+        }
+
+        return accounts;
     }
 
     @Override
